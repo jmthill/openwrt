@@ -56,11 +56,12 @@
 	cpus {
 		#address-cells = <1>;
 		#size-cells = <0>;
-		frequency = <800000000>;
 
 		cpu@0 {
 			compatible = "mips,mips34Kc";
 			reg = <0>;
+			clocks = <&cpu_clk>;
+			clock-names = "cpu";
 		};
 	};
 
@@ -78,6 +79,12 @@
 		#address-cells = <0>;
 		#interrupt-cells = <1>;
 		interrupt-controller;
+	};
+
+	cpu_clk: cpu_clk {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency  = <800000000>;
 	};
 
 	lx_clk: lx_clk {
