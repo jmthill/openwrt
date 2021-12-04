@@ -9,7 +9,7 @@
 #include <linux/sched_clock.h>
 #include "timer-of.h"
 
-#include <mach-rtl83xx.h>
+#include <asm/mach-rtl838x/mach-rtl83xx.h>
 
 /* 
  * Timer registers

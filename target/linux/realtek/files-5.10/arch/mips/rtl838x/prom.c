@@ -19,7 +19,7 @@
 #include <asm/page.h>
 #include <asm/cpu.h>
 
-#include <mach-rtl83xx.h>
+#include <asm/mach-rtl838x/mach-rtl83xx.h>
 
 extern char arcs_cmdline[];
 extern const char __appended_dtb;
