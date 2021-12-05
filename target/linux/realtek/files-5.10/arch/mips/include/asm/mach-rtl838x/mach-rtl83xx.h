@@ -6,6 +6,7 @@
 #ifndef _MACH_RTL838X_H_
 #define _MACH_RTL838X_H_
 
+#include <asm/io.h>
 #include <asm/types.h>
 /*
  * Register access macros
