@@ -1,0 +1,45 @@
+From 4042147a0cc6af5a400b5e12a7855e893dec01b4 Mon Sep 17 00:00:00 2001
+From: Bert Vermeulen <bert@biot.com>
+Date: Tue, 19 Jan 2021 10:21:07 +0100
+Subject: [PATCH] MIPS: Add Realtek RTL838x/RTL839x support as generic MIPS
+ system
+
+This is just enough system to boot the kernel with earlycon working.
+
+Signed-off-by: Bert Vermeulen <bert@biot.com>
+Signed-off-by: Sander Vanheule <sander@svanheule.net>
+Signed-off-by: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+---
+ arch/mips/Kconfig | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+--- a/arch/mips/Kconfig
++++ b/arch/mips/Kconfig
+@@ -632,6 +632,27 @@ config RALINK
+ 	select ARCH_HAS_RESET_CONTROLLER
+ 	select RESET_CONTROLLER
+ 
++config MACH_REALTEK_RTL
++	bool "Realtek RTL838x/RTL839x based machines"
++	select MIPS_GENERIC
++	select DMA_NONCOHERENT
++	select IRQ_MIPS_CPU
++	select CSRC_R4K
++	select CEVT_R4K
++	select SYS_HAS_CPU_MIPS32_R1
++	select SYS_HAS_CPU_MIPS32_R2
++	select SYS_SUPPORTS_BIG_ENDIAN
++	select SYS_SUPPORTS_32BIT_KERNEL
++	select SYS_SUPPORTS_MIPS16
++	select SYS_SUPPORTS_MULTITHREADING
++	select SYS_SUPPORTS_VPE_LOADER
++	select SYS_HAS_EARLY_PRINTK
++	select SYS_HAS_EARLY_PRINTK_8250
++	select USE_GENERIC_EARLY_PRINTK_8250
++	select BOOT_RAW
++	select PINCTRL
++	select USE_OF
++
+ config SGI_IP22
+ 	bool "SGI IP22 (Indy/Indigo2)"
+ 	select ARC_MEMORY
