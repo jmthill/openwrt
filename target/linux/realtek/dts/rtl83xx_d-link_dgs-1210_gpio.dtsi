@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 
 / {
-	gpio-restart {
+	hard_restart: gpio-restart {
 		compatible = "gpio-restart";
 		gpios = <&gpio1 34 GPIO_ACTIVE_LOW>;
 		open-source;
