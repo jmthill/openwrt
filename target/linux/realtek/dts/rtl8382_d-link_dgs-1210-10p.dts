@@ -64,7 +64,7 @@
 
 &hard_restart {
 	/* Could be present, but was not originally defined */
-	status = "disabled";
+	status = "okay";
 };
 
 &keys {
